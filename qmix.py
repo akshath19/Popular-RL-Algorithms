@@ -4,7 +4,7 @@
 
 from numpy.core.function_base import _logspace_dispatcher
 from pettingzoo.butterfly import cooperative_pong_v3  # cannot use ram
-from pettingzoo.atari import entombed_cooperative_v2
+from pettingzoo.atari import entombed_cooperative_v3
 import numpy as np
 from common.wrappers import Dict2TupleWrapper
 import supersuit
@@ -409,7 +409,7 @@ if __name__ == '__main__':
     target_update_interval = 10
     model_path = 'model/qmix'
  
-    env = entombed_cooperative_v2  # this is not a valid env, reward seems to be zero-sum; for QMIX we need same reward for all agents
+    env = entombed_cooperative_v3  # this is not a valid env, reward seems to be zero-sum; for QMIX we need same reward for all agents
     env = wrap_env(env, obs_type='ram')
     print(env.action_space, env.observation_space)
     state_dim = env.observation_space.shape[0]
